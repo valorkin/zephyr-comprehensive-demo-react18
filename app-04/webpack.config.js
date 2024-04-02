@@ -1,6 +1,6 @@
 const MiniCssExtractPlugin = require('mini-css-extract-plugin');
 const { ModuleFederationPlugin } = require('@module-federation/enhanced');
-const path = require('path');
+const path = require('node:path');
 
 const mode = process.env.NODE_ENV || 'development';
 const prod = mode === 'production';
@@ -54,18 +54,23 @@ module.exports = {
   },
   mode,
   plugins: [
-    new ModuleFederationPlugin({
-      name: 'app_04',
-      filename: 'remoteEntry.js',
-      exposes: {
-        './App': './src/main.js',
-        './loadApp': './src/loadApp.js',
-      },
-      shared: [],
-    }),
     new MiniCssExtractPlugin({
       filename: '[name].css',
     }),
+      /**
+       * ERROR in webpack/runtime/runtimeId
+       * RuntimeIdRuntimeModule must be in a single runtime
+       * Error: RuntimeIdRuntimeModule must be in a single runtime
+       * */
+    // new ModuleFederationPlugin({
+    //   name: 'app_04',
+    //   filename: 'remoteEntry.js',
+    //   exposes: {
+    //     './App': './src/main.js',
+    //     './loadApp': './src/loadApp.js',
+    //   },
+    //   shared: [],
+    // }),
   ],
   devtool: prod ? false : 'source-map',
 };
