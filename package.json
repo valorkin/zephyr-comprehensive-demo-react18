@@ -2,7 +2,6 @@
   "name": "comprehensive-demo-react18",
   "description": "Multi-framework comprehensive demo for React 18",
   "version": "0.0.0",
-  "workspaces": ["app-01","app-02","app-03","app-04","app-05"],
   "scripts": {
     "start": "pnpm build && pnpm serve",
     "legacy:start": "pnpm legacy:build && pnpm serve",
@@ -17,7 +16,6 @@
     "@rsdoctor/rspack-plugin": "^0.1.8",
     "@rsdoctor/webpack-plugin": "^0.1.8",
     "concurrently": "8.2.2",
-    "wait-on": "7.2.0",
-    "cross-env": "^7.0.3"
+    "wait-on": "7.2.0"
   }
 }
