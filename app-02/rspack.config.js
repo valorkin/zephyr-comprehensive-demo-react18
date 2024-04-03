@@ -4,7 +4,9 @@ const {
 } = require('@rspack/core');
 const deps = require('./package.json').dependencies;
 
-module.exports = {
+const { withZephyr } = require('zephyr-webpack-plugin');
+
+module.exports = withZephyr()({
   entry: './src/index',
 
   mode: 'development',
@@ -73,4 +75,4 @@ module.exports = {
       chunks: ['main'],
     }),
   ],
-};
+});

@@ -1,7 +1,10 @@
 const HtmlWebpackPlugin = require('html-webpack-plugin');
 const { ModuleFederationPlugin } = require('@module-federation/enhanced');
 const deps = require('./package.json').dependencies;
-module.exports = {
+
+const { withZephyr } = require('zephyr-webpack-plugin');
+
+module.exports = withZephyr()({
   entry: './src/index',
   cache: false,
 
@@ -73,4 +76,4 @@ module.exports = {
       chunks: ['main'],
     }),
   ],
-};
+});

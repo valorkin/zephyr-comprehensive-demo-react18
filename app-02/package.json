@@ -1,5 +1,5 @@
 {
-  "name": "comprehensive-demo-react18_app-02",
+  "name": "app_02",
   "description": "ReactJS - plus is an aggregation with other remotes",
   "version": "0.0.0",
   "ignored": true,
@@ -23,7 +23,7 @@
   "scripts": {
     "build": "cross-env NODE_ENV=production rspack build --mode production",
     "legacy:build": "cross-env NODE_ENV=production webpack --mode production",
-    "start": "rspack cross-env NODE_ENV=production --watch",
+    "start": "cross-env NODE_ENV=production rspack --watch",
     "legacy:start": "webpack --watch",
     "dev": "rspack serve",
     "legacy:dev": "webpack-dev-server --content-base public",
