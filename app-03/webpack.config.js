@@ -1,7 +1,9 @@
 const HtmlWebpackPlugin = require('html-webpack-plugin');
 const { ModuleFederationPlugin } = require('@module-federation/enhanced');
 
-module.exports = {
+const { withZephyr } = require('zephyr-webpack-plugin');
+
+module.exports = /*withZephyr()*/({
   entry: './src/index',
   cache: false,
 
@@ -45,7 +47,8 @@ module.exports = {
       name: 'app_03',
       filename: 'remoteEntry.js',
       remotes: {
-        app_01: 'app_01@http://localhost:3001/remoteEntry.js',
+        // app_01: 'app_01@http://localhost:3001/remoteEntry.js',
+        app_01: 'app_01@https://valorkin_2659-app_01-zephyr-comprehensive-demo-react1-8803b7-ze.valorkin.dev/remoteEntry.js',
       },
       exposes: {
         './Button': './src/Button',
@@ -60,7 +63,7 @@ module.exports = {
       },
     }),
     new HtmlWebpackPlugin({
-      template: './public/index.html',
+      template: './src/index.html',
     }),
   ],
-};
+});
