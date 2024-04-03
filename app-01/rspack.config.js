@@ -3,6 +3,7 @@ const {
   HtmlRspackPlugin,
 } = require('@rspack/core');
 const { RsdoctorRspackPlugin } = require('@rsdoctor/rspack-plugin');
+
 const { withZephyr } = require('zephyr-webpack-plugin');
 
 const deps = require('./package.json').dependencies;

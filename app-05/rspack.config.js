@@ -2,9 +2,12 @@ const {
   HtmlRspackPlugin,
   container: { ModuleFederationPlugin },
 } = require('@rspack/core');
+
+const { withZephyr } = require('zephyr-webpack-plugin');
+
 const mode = process.env.NODE_ENV || 'development';
 
-module.exports = {
+module.exports = withZephyr()({
   entry: './src/index.ts',
   module: {
     rules: [
@@ -79,4 +82,4 @@ module.exports = {
       template: 'src/index.html',
     }),
   ],
-};
+});

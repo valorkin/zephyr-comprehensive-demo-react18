@@ -3,10 +3,12 @@ const {
 } = require('@rspack/core');
 const path = require('path');
 
+const { withZephyr } = require('zephyr-webpack-plugin');
+
 const mode = process.env.NODE_ENV || 'development';
 const prod = mode === 'production';
 
-module.exports = {
+module.exports = withZephyr()({
   entry: {
     bundle: ['./src/main.js'],
   },
@@ -51,4 +53,4 @@ module.exports = {
   experiments: {
     css: true,
   },
-};
+});

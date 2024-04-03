@@ -3,7 +3,9 @@ const {
   HtmlRspackPlugin,
 } = require('@rspack/core');
 
-module.exports = {
+const { withZephyr } = require('zephyr-webpack-plugin');
+
+module.exports = withZephyr()({
   entry: './src/index',
 
   mode: 'development',
@@ -62,4 +64,4 @@ module.exports = {
       template: './public/index.html',
     }),
   ],
-};
+});
