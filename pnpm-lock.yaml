@@ -6881,7 +6881,7 @@ packages:
     dev: false
 
   file:_zephyr_pack/zephyr-webpack-plugin-0.0.2.tgz:
-    resolution: {integrity: sha512-Cng0/aR1c7iXM9e+1OEbxeK4O6GMjPZSXvDuUObC8dJi1UWvXHvHqZxn3GPqPAl0kTx6UUUEhbjHDwgpfMBnJQ==, tarball: file:_zephyr_pack/zephyr-webpack-plugin-0.0.2.tgz}
+    resolution: {integrity: sha512-CN8oguxyyhKKw7/qB2DqV0VvTJ4ETm/oTYr1/7cC1HVsxLHMMNQJgoSSkhA48WfyQz5J6l9WhxmhvdYUnNUlLA==, tarball: file:_zephyr_pack/zephyr-webpack-plugin-0.0.2.tgz}
     name: zephyr-webpack-plugin
     version: 0.0.2
     dependencies:
