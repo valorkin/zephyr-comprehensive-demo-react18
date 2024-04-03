@@ -1,5 +1,6 @@
 const {
   container: { ModuleFederationPlugin },
+  CopyRspackPlugin
 } = require('@rspack/core');
 const path = require('path');
 
@@ -39,6 +40,12 @@ module.exports = withZephyr()({
   },
   mode,
   plugins: [
+    new CopyRspackPlugin({
+      patterns: [{
+        from: './src/index.html',
+        to: './index.html'
+      }]
+    }),
     new ModuleFederationPlugin({
       name: 'app_04',
       filename: 'remoteEntry.js',

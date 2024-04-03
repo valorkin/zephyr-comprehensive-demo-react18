@@ -61,7 +61,7 @@ module.exports = withZephyr()({
       },
     }),
     new HtmlRspackPlugin({
-      template: './public/index.html',
+      template: './src/index.html',
     }),
   ],
 });
