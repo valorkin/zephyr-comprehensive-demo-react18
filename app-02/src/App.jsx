@@ -14,7 +14,7 @@ function App() {
       <ThemeProvider theme={theme}>
         <React.Suspense fallback={null}>
           <Page title="Material UI App">
-            <Typography variant="h6">Dialog Component</Typography>
+            <Typography variant="h6">Dialog Component 1</Typography>
             <Dialog />
             <Divider style={{ margin: '16px 0' }} />
             <Typography variant="h6">Tabs Component</Typography>

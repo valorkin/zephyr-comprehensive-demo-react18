@@ -2,7 +2,6 @@ const {
   container: { ModuleFederationPlugin },
   HtmlRspackPlugin,
 } = require('@rspack/core');
-const { RsdoctorRspackPlugin } = require('@rsdoctor/rspack-plugin');
 
 const { withZephyr } = require('zephyr-webpack-plugin');
 
@@ -10,7 +9,6 @@ const deps = require('./package.json').dependencies;
 
 module.exports = withZephyr()({
   entry: './src/index',
-
   mode: 'development',
   devtool: 'source-map',
   resolve: {
@@ -47,16 +45,15 @@ module.exports = withZephyr()({
       },
     ],
   },
-
   plugins: [
     new ModuleFederationPlugin({
       name: 'app_01',
       filename: 'remoteEntry.js',
       remotes: {
-        app_02: 'app_02@http://localhost:3002/remoteEntry.js',
-        app_03: 'app_03@http://localhost:3003/remoteEntry.js',
-        app_04: 'app_04@http://localhost:3004/remoteEntry.js',
-        app_05: 'app_05@http://localhost:3005/remoteEntry.js',
+        app_02: 'app_02',
+        app_03: 'app_03',
+        app_04: 'app_04',
+        app_05: 'app_05',
       },
       exposes: {
         './SideNav': './src/SideNav',

@@ -46,29 +46,15 @@ module.exports = withZephyr()({
     new ModuleFederationPlugin({
       name: 'app_02',
       filename: 'remoteEntry.js',
+      library: {name: 'app_02', type: 'window'},
       remotes: {
-        app_01: 'app_01@http://localhost:3001/remoteEntry.js',
-        app_03: 'app_03@http://localhost:3003/remoteEntry.js',
+        app_01: 'app_01',
+        app_03: 'app_03',
       },
       exposes: {
         './Dialog': './src/Dialog',
         './Tabs': './src/Tabs',
-      },
-      shared: {
-        ...deps,
-        '@material-ui/core': {
-          singleton: true,
-        },
-        'react-router-dom': {
-          singleton: true,
-        },
-        'react-dom': {
-          singleton: true,
-        },
-        react: {
-          singleton: true,
-        },
-      },
+      }
     }),
     new HtmlRspackPlugin({
       template: './public/index.html',

@@ -68,13 +68,13 @@ module.exports = withZephyr()({
   plugins: [
     new ModuleFederationPlugin({
       name: 'app_05',
+      library: {name: 'app_05', type: 'window'},
       filename: 'remoteEntry.js',
       exposes: {
         './ActionButton': './src/components/action-button.ts',
         './AlertBox': './src/components/alert-box.ts',
         './components': './src/index.ts',
-      },
-      shared: [],
+      }
     }),
     new HtmlRspackPlugin({
       title: 'LitHTML Typescript Example',
