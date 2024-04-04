@@ -46,7 +46,7 @@ module.exports = withZephyr()({
       filename: 'remoteEntry.js',
       library: {name: 'app_03', type: 'window'},
       remotes: {
-        app_01: 'app_01',
+        app_01: 'app_01@http://localhost:3001/remoteEntry.js',
       },
       exposes: {
         './Button': './src/Button',
