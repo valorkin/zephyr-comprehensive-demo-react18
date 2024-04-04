@@ -1,5 +1,5 @@
 const {
-  container: { ModuleFederationPlugin },
+  container: { ModuleFederationPluginV1 },
   HtmlRspackPlugin,
 } = require('@rspack/core');
 
@@ -42,7 +42,7 @@ module.exports = /*withZephyr()*/({
   },
 
   plugins: [
-    new ModuleFederationPlugin({
+    new ModuleFederationPluginV1({
       name: 'app_03',
       filename: 'remoteEntry.js',
       remotes: {

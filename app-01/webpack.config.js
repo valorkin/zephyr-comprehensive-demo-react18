@@ -1,5 +1,5 @@
 const HtmlWebpackPlugin = require('html-webpack-plugin');
-const { ModuleFederationPlugin } = require('@module-federation/enhanced');
+const { container:{ModuleFederationPlugin} } = require('webpack');
 const { RsdoctorWebpackPlugin } = require('@rsdoctor/webpack-plugin');
 
 const deps = require('./package.json').dependencies;
