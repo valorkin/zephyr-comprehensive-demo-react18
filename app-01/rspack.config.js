@@ -2,7 +2,6 @@ const {
   container: { ModuleFederationPluginV1 },
   HtmlRspackPlugin,
 } = require('@rspack/core');
-const { RsdoctorRspackPlugin } = require('@rsdoctor/rspack-plugin');
 
 const { withZephyr } = require('zephyr-webpack-plugin');
 

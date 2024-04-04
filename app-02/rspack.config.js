@@ -47,7 +47,6 @@ module.exports = withZephyr()({
       name: 'app_02',
       filename: 'remoteEntry.js',
       remotes: {
-        app_01: 'app_01@http://localhost:3001/remoteEntry.js',
         app_03: 'app_03@http://localhost:3003/remoteEntry.js',
       },
       exposes: {
