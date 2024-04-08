@@ -49,11 +49,11 @@ module.exports = withZephyr()({
     new ModuleFederationPlugin({
       name: 'app_04',
       filename: 'remoteEntry.js',
+      library: {name: 'app_04', type: 'window'},
       exposes: {
         './App': './src/main.js',
         './loadApp': './src/loadApp.js',
-      },
-      shared: [],
+      }
     }),
   ],
   devtool: prod ? false : 'source-map',

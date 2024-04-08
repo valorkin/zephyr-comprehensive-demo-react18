@@ -1,14 +1,14 @@
 import Button from './Button';
 import React from 'react';
 
-const Page = React.lazy(() => import('app_01/Page'));
+// const Page = React.lazy(() => import('app_01/Page'));
 
 function App() {
   return (
     <React.Suspense fallback={null}>
-      <Page title="Styled Components App">
+      {/*<Page title="Styled Components App 1">*/}
         <Button>&#128133; Test Button</Button>
-      </Page>
+      {/*</Page>*/}
     </React.Suspense>
   );
 }
