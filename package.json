@@ -1,5 +1,5 @@
 {
-  "name": "comprehensive-demo-react18",
+  "name": "test-demo-react18",
   "description": "Multi-framework comprehensive demo for React 18",
   "version": "0.0.0",
   "scripts": {
@@ -20,7 +20,6 @@
     "wait-on": "7.2.0"
   },
   "dependencies": {
-    "zephyr-edge-contract": "file:_zephyr_pack\\zephyr-edge-contract-0.0.2.tgz",
-    "zephyr-webpack-plugin": "file:_zephyr_pack\\zephyr-webpack-plugin-0.0.2.tgz"
+    "zephyr-webpack-plugin": "^0.0.6"
   }
 }
