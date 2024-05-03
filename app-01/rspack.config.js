@@ -1,7 +1,8 @@
 const {
-  container: { ModuleFederationPluginV1 },
+  container: { ModuleFederationPlugin },
   HtmlRspackPlugin,
 } = require('@rspack/core');
+const path = require('path');
 
 const { withZephyr } = require('zephyr-webpack-plugin');
 
@@ -48,7 +49,7 @@ module.exports = withZephyr()({
   },
 
   plugins: [
-    new ModuleFederationPluginV1({
+    new ModuleFederationPlugin({
       name: 'app_01',
       filename: 'remoteEntry.js',
       remotes: {
@@ -57,6 +58,7 @@ module.exports = withZephyr()({
         app_04: 'app_04@http://localhost:3004/remoteEntry.js',
         app_05: 'app_05@http://localhost:3005/remoteEntry.js',
       },
+      runtimePlugins: [path.resolve(__dirname, './custom-runtime-plugin.js')],
       exposes: {
         './SideNav': './src/SideNav',
         './Page': './src/Page',
